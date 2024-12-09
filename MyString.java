@@ -20,8 +20,14 @@ public class MyString {
      * @return the number of times c appears in str
      */
     public static int countChar(String str, char ch) {
-        //// Replace the following statement with your code
-        return 0;
+        int c=0; //counter
+
+        for(int i=0; i<str.length(); i++) //checks number of ch in str
+        {
+            if(str.charAt(i) == ch)
+                c++;
+        }
+        return c;
     }
 
     /** Returns true if str1 is a subset string str2, false otherwise
@@ -36,8 +42,22 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-         //// Replace the following statement with your code
-        return false;
+        
+        for(char i='a'; i<'z'; i++) //goes from a-z and checking the number of char (a-z) appearences
+        {
+            if(countChar(str2, i) < countChar(str1, i))//num of a specific char appearences should be smaller in str2 vs str1
+                return false;
+        }
+
+        for(char j='A'; j<'Z'; j++) //same as the last loop but for upper case letters
+        {
+            if(countChar(str2, j) < countChar(str1, j))
+                return false;
+        }
+
+
+        return true;
+
     }
 
     /** Returns a string which is the same as the given string, with a space
@@ -49,8 +69,17 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString(String str) {
-        //// Replace the following statement with your code
-        return null;
+        String spacedStr = "";
+        
+        for(int i=0; (i<str.length()); i++)
+        {
+            spacedStr+=str.charAt(i);
+            if(i < str.length()-1){                
+                spacedStr+=" ";
+        }
+    }
+
+        return spacedStr;
     }
   
     /**
