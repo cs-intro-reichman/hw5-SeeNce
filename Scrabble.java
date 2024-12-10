@@ -66,6 +66,8 @@ public class Scrabble {
 			score += SCRABBLE_LETTER_VALUES[word.charAt(i)-97];
 		}
 
+		score *= word.length();
+
 		if(word.length()==HAND_SIZE)
 			score+=50;
 		
