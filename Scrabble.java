@@ -82,8 +82,8 @@ public class Scrabble {
 	public static String createHand() {
 
 		String newHand = MyString.randomStringOfLetters(HAND_SIZE-2);
-		MyString.insertRandomly('a', newHand);
-		MyString.insertRandomly('e', newHand);
+		newHand = MyString.insertRandomly('a', newHand);
+		newHand = MyString.insertRandomly('e', newHand);
 
 		return newHand;
 	}
