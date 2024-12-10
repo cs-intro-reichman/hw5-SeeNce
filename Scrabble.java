@@ -107,6 +107,9 @@ public class Scrabble {
 			// end-of-line characters.
 			String input = in.readString();
 			//
+			if (input == null || input.isEmpty() || !input.matches("[a-zA-Z]+")) {
+				System.out.println("Invalid input. Try again.");
+
 			if(input.equals("."))
 				break;
 
@@ -116,6 +119,10 @@ public class Scrabble {
 						hand = MyString.remove(hand, input);
 						score+= wordScore(input);
 						System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
+						//**** */
+						System.out.println("Updated Hand: " + MyString.spacedString(hand));
+						System.out.println();
+						//**** */
 					} else {
 						System.out.println("Invalid word. Try again.");
 					}
