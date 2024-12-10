@@ -107,9 +107,6 @@ public class Scrabble {
 			// end-of-line characters.
 			String input = in.readString();
 			//
-			if (input == null || input.isEmpty() || !input.matches("[a-zA-Z]+")) {
-				System.out.println("Invalid input. Try again.");
-
 			if(input.equals("."))
 				break;
 
