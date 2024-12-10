@@ -9,6 +9,11 @@ public class MyString {
         System.out.println(countChar(hello, 'z'));
         System.out.println(spacedString(hello));
         //// Put your other tests here.
+        System.out.println("\nTesting remove:");
+        System.out.println("committee - meet -> " + MyString.remove("committee", "meet") + " (expected: comit)");
+        System.out.println("abc - abc -> " + MyString.remove("abc", "abc") + " (expected: )");
+        System.out.println("abc - b -> " + MyString.remove("abc", "b") + " (expected: ac)");
+        System.out.println("hello - empty string -> " + MyString.remove("hello", "") + " (expected: hello)");
     }
 
     /**
@@ -93,8 +98,11 @@ public class MyString {
      * @return a randomly generated string, consisting of 'n' lowercase letters
      */
     public static String randomStringOfLetters(int n) {
-        //// Replace the following statement with your code
-        return null;
+        String randStr = "";
+        for(int i=0; i<n; i++)
+            randStr += (char)('a' + Math.random()*26);
+
+        return randStr;
     }
 
     /**
@@ -107,8 +115,16 @@ public class MyString {
      * @return a string consisting of str1 minus all the characters of str2
      */
     public static String remove(String str1, String str2) {
-       //// Replace the following statement with your code
-        return null;
+        for (int i = 0; i < str2.length(); i++) {
+            char ch = str2.charAt(i); 
+    
+            
+            int j = str1.indexOf(ch);
+            if (j >= 0) {
+                str1 = str1.substring(0, j) + str1.substring(j + 1);
+            }
+        }
+        return str1;
     }
 
     /**
