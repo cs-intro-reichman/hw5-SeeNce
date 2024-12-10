@@ -145,14 +145,15 @@ public class Scrabble {
 			// Gets the user's input, which is all the characters entered by 
 			// the user until the user enter the ENTER character.
 			String input = in.readString();
-			if(input.equals("e")){
-				break;
-			}
 
-			if(input.equals("n")){
-				playHand(createHand());
-			} else System.out.println("error input try again");
-
+			if (input.equals("e")) { 
+           		 break;
+        	} else if (input.equals("n")) { 
+            		String hand = createHand();
+            		playHand(hand);
+       				} else {
+           				 System.out.println("Invalid input. Please try again.");
+       		 }
 
 		}
 	}
