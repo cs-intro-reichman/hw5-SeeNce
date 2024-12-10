@@ -48,6 +48,7 @@ public class Scrabble {
 
 	// Checks if the given word is in the dictionary.
 	public static boolean isWordInDictionary(String word) {
+		word = word.toLowerCase();
 		for(int i=0; i<NUM_OF_WORDS; i++){
 			if(word.equals(DICTIONARY[i]))
 				return true;
